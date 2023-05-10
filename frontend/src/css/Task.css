@@ -1,0 +1,9 @@
+.task {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.task-detail {
+    font-size: 14px;
+}

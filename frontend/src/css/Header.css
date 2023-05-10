@@ -1,0 +1,12 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 20px;
+  height: 50px;
+}
+
+.nav-items .link {
+  color: grey;
+  font-size: 18px;
+}
