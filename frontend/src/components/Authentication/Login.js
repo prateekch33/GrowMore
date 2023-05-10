@@ -9,7 +9,7 @@ function Login() {
   const navigate = useNavigate();
   useEffect(() => {
     if (login === 1) {
-      fetch(`/auth/login`, {
+      fetch(`/api/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

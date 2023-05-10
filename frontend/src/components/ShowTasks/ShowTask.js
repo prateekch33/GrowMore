@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import Task from "./Task";
+import { DataContext } from "../../pages/HomePage";
 
 const showTask = {
   display: "flex",
@@ -12,26 +13,10 @@ const showTask = {
 };
 
 function ShowTask() {
-  const [tasks, setTasks] = useState([]);
+  const { tasks, callApi } = useContext(DataContext);
   useEffect(() => {
-    fetch(`/task/tasks`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.status === 0) {
-          setTasks(data.data);
-        } else {
-          alert(data.error);
-        }
-      })
-      .catch((err) => {
-        alert(err.message);
-      });
-  });
+    callApi();
+  }, [callApi]);
 
   return (
     <div style={showTask}>

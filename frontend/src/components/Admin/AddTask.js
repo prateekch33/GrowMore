@@ -6,7 +6,7 @@ function AddTask() {
   const [submit, setSubmit] = useState(0);
   useEffect(() => {
     if (submit === 1) {
-      fetch(`/task/addtask`, {
+      fetch(`/api/task/addtask`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

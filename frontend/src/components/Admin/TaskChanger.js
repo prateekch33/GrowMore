@@ -7,7 +7,7 @@ function TaskChanger(props) {
   const [deleteTask, setDeleteTask] = useState("");
   useEffect(() => {
     if (deleteTask !== "") {
-      fetch(`/task/deleteTask/?taskid=${deleteTask}`, {
+      fetch(`/api/task/deleteTask/?taskid=${deleteTask}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -25,7 +25,7 @@ function TaskChanger(props) {
           alert(err.message);
         });
     } else if (update !== "") {
-      fetch(`/task/updatetask/?taskid=${update}`, {
+      fetch(`/api/task/updatetask/?taskid=${update}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

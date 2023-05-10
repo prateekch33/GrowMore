@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../css/Header.css";
 
 function Header() {
   const [name, setName] = useState("");
+  const navigate = useNavigate();
   useEffect(() => {
-    fetch(`/auth/user`, {
+    fetch(`/api/auth/user`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -25,13 +26,18 @@ function Header() {
       });
   }, []);
 
+  const logout = () => {
+    localStorage.removeItem("authToken");
+    navigate("/");
+  };
+
   return (
     <div className="navbar">
       <div className="nav-items">
         <h1>GrowMore</h1>
       </div>
       <div className="nav-items">
-        <Link to="#logout" className="link">
+        <Link to="/" className="link" onClick={() => logout()}>
           {name}
         </Link>
       </div>
