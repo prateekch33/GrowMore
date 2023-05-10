@@ -4,7 +4,7 @@ dotenv.config();
 import jwt from "jsonwebtoken";
 import users from "../models/users.mjs";
 import bcrypt from "bcryptjs";
-import jwtVerify from "../middlewares/jwtverify.mjs";
+import jwtVerify from "../middlewares/jwtVerify.mjs";
 const auth = express.Router();
 
 auth.post("/register", async (req, res) => {
