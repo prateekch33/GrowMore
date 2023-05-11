@@ -1,8 +1,9 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import Header from "../components/Header";
 import AddTask from "../components/Admin/AddTask";
 import UpdateTask from "../components/Admin/UpdateTask";
 import ShowTask from "../components/ShowTasks/ShowTask";
+import { useNavigate } from "react-router-dom";
 
 export const DataContext = createContext();
 
@@ -22,8 +23,14 @@ function HomePage() {
         } else {
           alert(data.error);
         }
-      })
+      });
   };
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!localStorage.getItem("authToken")) {
+      navigate("/");
+    }
+  },[]);
   return (
     <div>
       <Header />
