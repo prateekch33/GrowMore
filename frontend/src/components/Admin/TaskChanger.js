@@ -16,6 +16,7 @@ function TaskChanger(props) {
         .then((res) => res.json())
         .then((data) => {
           if (data.status === 0) {
+            setDeleteTask("");
             alert("Task Deleted Successfully");
           } else {
             alert(data.error);
@@ -35,6 +36,7 @@ function TaskChanger(props) {
         .then((res) => res.json())
         .then((data) => {
           if (data.status === 0) {
+            setUpdate("");
             alert("Task Updated");
           } else {
             alert(data.error);

@@ -24,7 +24,7 @@ function HomePage() {
         }
       })
       .catch((err) => {
-        alert(err.message);
+        console.log(err.message);
       });
   };
   return (

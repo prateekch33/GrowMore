@@ -16,6 +16,7 @@ function AddTask() {
         .then((res) => res.json())
         .then((data) => {
           if (data.status === 0) {
+            setSubmit(1);
             alert("Task Added Successfully");
           } else {
             alert(data.error);
