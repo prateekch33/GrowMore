@@ -23,9 +23,6 @@ function HomePage() {
           alert(data.error);
         }
       })
-      .catch((err) => {
-        console.log(err.message);
-      });
   };
   return (
     <div>
